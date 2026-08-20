@@ -1,0 +1,127 @@
+{
+  "eventos": 8,
+  "brute_force_sospechoso": [
+    {
+      "src_ip": "203.0.113.88",
+      "user": "administrator",
+      "failed_attempts": 4,
+      "mitre": "T1110",
+      "severity": "alta"
+    }
+  ],
+  "detalle": [
+    {
+      "timestamp": "2026-08-19T09:01:12",
+      "event_id": "4625",
+      "logon_type": "Network",
+      "user": "j.perez",
+      "src_ip": "10.0.1.55",
+      "workstation": "LAP-JPerez",
+      "iocs": [
+        "10.0.1.55",
+        "j.perez",
+        "LAP-JPerez"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T09:01:18",
+      "event_id": "4625",
+      "logon_type": "Network",
+      "user": "j.perez",
+      "src_ip": "10.0.1.55",
+      "workstation": "LAP-JPerez",
+      "iocs": [
+        "10.0.1.55",
+        "j.perez",
+        "LAP-JPerez"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T09:01:25",
+      "event_id": "4624",
+      "logon_type": "Network",
+      "user": "j.perez",
+      "src_ip": "10.0.1.55",
+      "workstation": "LAP-JPerez",
+      "iocs": [
+        "10.0.1.55",
+        "j.perez",
+        "LAP-JPerez"
+      ],
+      "mitre": "T1078"
+    },
+    {
+      "timestamp": "2026-08-19T03:14:02",
+      "event_id": "4625",
+      "logon_type": "RemoteInteractive (RDP)",
+      "user": "administrator",
+      "src_ip": "203.0.113.88",
+      "workstation": "UNKNOWN",
+      "iocs": [
+        "203.0.113.88",
+        "administrator",
+        "UNKNOWN"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T03:14:08",
+      "event_id": "4625",
+      "logon_type": "RemoteInteractive (RDP)",
+      "user": "administrator",
+      "src_ip": "203.0.113.88",
+      "workstation": "UNKNOWN",
+      "iocs": [
+        "203.0.113.88",
+        "administrator",
+        "UNKNOWN"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T03:14:15",
+      "event_id": "4625",
+      "logon_type": "RemoteInteractive (RDP)",
+      "user": "administrator",
+      "src_ip": "203.0.113.88",
+      "workstation": "UNKNOWN",
+      "iocs": [
+        "203.0.113.88",
+        "administrator",
+        "UNKNOWN"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T03:14:21",
+      "event_id": "4625",
+      "logon_type": "RemoteInteractive (RDP)",
+      "user": "administrator",
+      "src_ip": "203.0.113.88",
+      "workstation": "UNKNOWN",
+      "iocs": [
+        "203.0.113.88",
+        "administrator",
+        "UNKNOWN"
+      ],
+      "mitre": "T1110"
+    },
+    {
+      "timestamp": "2026-08-19T11:02:00",
+      "event_id": "4624",
+      "logon_type": "Interactive",
+      "user": "kevin",
+      "src_ip": "127.0.0.1",
+      "workstation": "WIN-SOC01",
+      "iocs": [
+        "127.0.0.1",
+        "kevin",
+        "WIN-SOC01"
+      ],
+      "mitre": "T1078"
+    }
+  ],
+  "nota_t1": "Tras varios 4625, buscar 4624 posterior (compromiso). RDP Type 10 desde Internet = priorizar."
+}

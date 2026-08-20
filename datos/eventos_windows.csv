@@ -1,0 +1,9 @@
+timestamp,event_id,logon_type,status,target_user,src_ip,workstation,message
+2026-08-19T09:01:12,4625,3,0xC000006D,j.perez,10.0.1.55,LAP-JPerez,An account failed to log on
+2026-08-19T09:01:18,4625,3,0xC000006A,j.perez,10.0.1.55,LAP-JPerez,An account failed to log on
+2026-08-19T09:01:25,4624,3,0x0,j.perez,10.0.1.55,LAP-JPerez,An account was successfully logged on
+2026-08-19T03:14:02,4625,10,0xC000006D,administrator,203.0.113.88,UNKNOWN,An account failed to log on
+2026-08-19T03:14:08,4625,10,0xC000006D,administrator,203.0.113.88,UNKNOWN,An account failed to log on
+2026-08-19T03:14:15,4625,10,0xC000006D,administrator,203.0.113.88,UNKNOWN,An account failed to log on
+2026-08-19T03:14:21,4625,10,0xC000006D,administrator,203.0.113.88,UNKNOWN,An account failed to log on
+2026-08-19T11:02:00,4624,2,0x0,kevin,127.0.0.1,WIN-SOC01,An account was successfully logged on
