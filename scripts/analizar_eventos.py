@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+# Qué revisé al analizar estos eventos (Kevin)
+# - RDP Type 10 desde IP pública a las 03:14 = prioridad alta
+# - 4625 seguidos de 4624: no asumir falso positivo sin mirar horario/host
+# - Contar fallos por (src_ip, user) >= 3 como sospecha T1110
 """SOC T1: parsea Event ID 4624/4625, extrae IoCs y mapea MITRE."""
 
 from __future__ import annotations

@@ -1,26 +1,25 @@
-# Lab SOC T1 — Análisis de logs Windows (Event ID 4624 / 4625)
+# Lab SOC T1 — Logs Windows (Event ID 4624 / 4625)
 
-Laboratorio básico de **SOC Tier 1**: parsear eventos de inicio de sesión de Windows, extraer **IoCs**, clasificar y mapear a **MITRE ATT&CK**.
+Practiqué análisis de logons de Windows como lo haría un analista Tier 1: separar ruido de un posible brute force, sacar IoCs y decidir si escalo.
 
-No requiere un Active Directory real. Usa un CSV sintético estilo Event Viewer.
+Trabajé con un extracto estilo Event Viewer (CSV). No es un DC real; el objetivo fue entrenar el ojo para **4625** (fallo), **4624** (éxito) y el Logon Type (3 = red, 10 = RDP).
 
-## Qué cubre del puesto
-- Análisis de logs **Windows**
-- IoCs (usuario, IP, workstation, Event ID)
-- Triage / posible falso positivo
-- MITRE **T1110** (brute force) y **T1078** (valid accounts)
+## Por qué lo hice
+En el perfil del puesto piden análisis de logs Windows e IoCs. Ya tenía práctica en Linux (auth/SSH + Fail2ban en AWS). Quería cubrir el lado Windows sin inventar “experiencia en AD”.
+
+## Qué salió al correrlo
+- Varios 4625 desde `203.0.113.88` por RDP (Type 10) → lo marqué como fuerza bruta (**T1110**), prioridad alta.
+- Fallos internos de `j.perez` desde `10.0.1.55` seguidos de un 4624 → revisar si fue typo o spray; no cerrar a ciegas.
+- Login local de usuario conocido → bajo ruido.
 
 ## Cómo ejecutar
 ```bash
 python scripts/analizar_eventos.py
 ```
+Genera `resultados/triage_windows.json`.
 
-## Interpretación rápida
-| Event ID | Significado |
-|----------|-------------|
-| 4625 | Logon **fallido** |
-| 4624 | Logon **exitoso** |
-| Logon Type 3 | Red (no consola local) |
-| Logon Type 10 | Remote Desktop |
+## Relación con otras prácticas
+- Fail2ban (AWS): misma idea T1110, otro SO.
+- TryHackMe Hydra: vi el ataque; acá practico la **detección** en logs.
 
-Autor: Kevin Anthony Cama Sánchez — github.com/KevCamaS
+Kevin Cama — github.com/KevCamaS
